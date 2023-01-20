@@ -1,8 +1,8 @@
-CREATE DATABASE TaskBoard;
+CREATE DATABASE IF NOT EXISTS TaskBoard;
 use TaskBoard;
 
-create table users (
-    id int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+create table IF NOT EXISTS users (
+    id_user int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name varchar(30) not null,
     surname varchar(30) not null,
     email varchar(30) not null,
@@ -11,10 +11,10 @@ create table users (
 );
 
 
-create table tasks (
-    id_task int UNSIGNED AUTO_INCREMENT PRIMARY_KEY,
-    id int,
-    description varchar(255) NOT NULL,
-    
-    FOREIGN KEY (id) REFERENCES tasks users(id)
+create table IF NOT EXISTS tasks (
+    id_task int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id_user int UNSIGNED NOT NULL,
+    description varchar(150) NOT NULL,
+    status ENUM("U", "P", "H", "C") NOT NULL default "U",
+    FOREIGN KEY (id_user) REFERENCES users(id_user)
 );

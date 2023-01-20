@@ -289,3 +289,8 @@ h2 {
   background-color: #7e0cf5;
   opacity: .2;
 }
+
+.btn-login {
+  background-color: #38d39f;
+  border-color: #38d39f;
+}

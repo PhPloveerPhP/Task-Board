@@ -5,7 +5,7 @@ return [
         'host' => 'localhost',
         'user' => 'root',
         'pass' => '',
-        'name' => 'school',
+        'name' => 'taskboard',
         'options' => [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ]

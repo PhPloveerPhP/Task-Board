@@ -1,10 +1,11 @@
-<?php 
+<?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
-function create_card(string $description): string {
+function create_card(string $description): string
+{
     $card_template = <<<delimiter
-        <div class="card mb-3 bg-light">
+    <div class="card mb-3 bg-light">
         <div class="card-body p-3">
             <div class="float-right mr-n2">
                 <label class="custom-control custom-checkbox">
@@ -26,5 +27,3 @@ function create_card(string $description): string {
 
     return $card_template;
 }
-
-?>

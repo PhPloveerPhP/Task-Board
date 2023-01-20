@@ -17,13 +17,6 @@ try {
 } catch (PDOException $error ) {
     $error = $error->getMessage();
 }
-
-// if ($tasks && $sentence-> rowCount() > 0) {
-                //     foreach ($tasks as $task => $value) {
-                //     echo $value["description"];
-                //     }
-                // }
-
 ?>
 
 
@@ -34,11 +27,10 @@ try {
 
     <?php include "Parts/board_header.php" ?>
 
-
         <body>
             <main class="content">
                 <div class="container p-0">
-                    <h1 class="h3 mb-3">Kanban Board</h1>
+                    <h1 class="h3 mb-3">My Board</h1>
                     
                     <div class="row">
 
@@ -46,25 +38,6 @@ try {
                         <div class="col-12 col-lg-6 col-xl-3">
                             <div class="card card-border-primary">
                                 <div class="card-header">
-                                    <div class="card-actions float-right">
-                                        <div class="dropdown show">
-                                            <a href="#" data-toggle="dropdown" data-display="static">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round"
-                                                    class="feather feather-more-horizontal align-middle">
-                                                    <circle cx="12" cy="12" r="1"></circle>
-                                                    <circle cx="19" cy="12" r="1"></circle>
-                                                    <circle cx="5" cy="12" r="1"></circle>
-                                                </svg>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <h5 class="card-title">Upcoming</h5>
                                     <h6 class="card-subtitle text-muted">
                                         Nam pretium turpis et arcu. Duis arcu tortor.
@@ -78,7 +51,7 @@ try {
                                             echo $card;
                                     }} ?>
 
-                                    <a href="#" class="btn btn-card btn-primary btn-block">Add new</a>
+                                    <a href="#" class="btn btn-card btn-primary btn-block" type="button" data-toggle="modal" data-target="#exampleModal">Add new</a>
                                 </div>
                             </div>
                         </div>
@@ -87,25 +60,6 @@ try {
                         <div class="col-12 col-lg-6 col-xl-3">
                             <div class="card card-border-warning">
                                 <div class="card-header">
-                                    <div class="card-actions float-right">
-                                        <div class="dropdown show">
-                                            <a href="#" data-toggle="dropdown" data-display="static">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round"
-                                                    class="feather feather-more-horizontal align-middle">
-                                                    <circle cx="12" cy="12" r="1"></circle>
-                                                    <circle cx="19" cy="12" r="1"></circle>
-                                                    <circle cx="5" cy="12" r="1"></circle>
-                                                </svg>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <h5 class="card-title">In Progress</h5>
                                     <h6 class="card-subtitle text-muted">
                                         Nam pretium turpis et arcu. Duis arcu tortor.
@@ -129,25 +83,6 @@ try {
                         <div class="col-12 col-lg-6 col-xl-3">
                             <div class="card card-border-danger">
                                 <div class="card-header">
-                                    <div class="card-actions float-right">
-                                        <div class="dropdown show">
-                                            <a href="#" data-toggle="dropdown" data-display="static">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round"
-                                                    class="feather feather-more-horizontal align-middle">
-                                                    <circle cx="12" cy="12" r="1"></circle>
-                                                    <circle cx="19" cy="12" r="1"></circle>
-                                                    <circle cx="5" cy="12" r="1"></circle>
-                                                </svg>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <h5 class="card-title">On hold</h5>
                                     <h6 class="card-subtitle text-muted">
                                         Nam pretium turpis et arcu. Duis arcu tortor.
@@ -171,25 +106,6 @@ try {
                         <div class="col-12 col-lg-6 col-xl-3">
                             <div class="card card-border-success">
                                 <div class="card-header">
-                                    <div class="card-actions float-right">
-                                        <div class="dropdown show">
-                                            <a href="#" data-toggle="dropdown" data-display="static">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round"
-                                                    class="feather feather-more-horizontal align-middle">
-                                                    <circle cx="12" cy="12" r="1"></circle>
-                                                    <circle cx="19" cy="12" r="1"></circle>
-                                                    <circle cx="5" cy="12" r="1"></circle>
-                                                </svg>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <h5 class="card-title">Completed</h5>
                                     <h6 class="card-subtitle text-muted">
                                         Nam pretium turpis et arcu. Duis arcu tortor.
@@ -214,7 +130,9 @@ try {
                     
                 </div>
             </main>
-
+        
+    
+    <?php include "Parts/modals.php" ?>
     <?php include "Parts/footer.php" ?>
 
 <?php else: ?>

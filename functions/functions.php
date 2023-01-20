@@ -2,7 +2,7 @@
 
 declare (strict_types = 1);
 
-function create_card(string $description): string
+function create_card(string $description, string $id, string $status): string
 {
     $card_template = <<<delimiter
     <div class="card mb-3 bg-light">
@@ -20,10 +20,14 @@ function create_card(string $description): string
                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" width="32"
                     height="32" class="rounded-circle" alt="Avatar" />
             </div>
-            <a class="btn btn-outline-primary btn-sm" href="#">View</a>
+            <a class="btn btn-outline-primary btn-sm" href="#" id="$id,$status">View</a>
         </div>
     </div>
     delimiter;
 
     return $card_template;
 }
+
+function codificarHTML(string $string): string {
+    return htmlspecialchars($string, ENT_NOQUOTES | ENT_SUBSTITUTE, "UTF-8");
+};

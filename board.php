@@ -47,11 +47,15 @@ try {
 
                                     <?php foreach($tasks as $task => $value) {
                                         if ($value["status"] == "U") {
-                                            $card = create_card($value["description"]);
+                                            $card = create_card(
+                                                htmlspecialchars($value["description"]), 
+                                                htmlspecialchars($value["id_task"]), 
+                                                htmlspecialchars($value["status"]) 
+                                            );
                                             echo $card;
                                     }} ?>
 
-                                    <a href="#" class="btn btn-card btn-primary btn-block" type="button" data-toggle="modal" data-target="#exampleModal">Add new</a>
+                                    <a href="#" class="btn btn-card btn-primary btn-block">Add new</a>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +74,11 @@ try {
                                      <!-- Insert tasks -->
                                     <?php foreach($tasks as $task => $value) {
                                         if ($value["status"] == "P") {
-                                            $card = create_card($value["description"]);
+                                            $card = create_card(
+                                                htmlspecialchars($value["description"]), 
+                                                htmlspecialchars($value["id_task"]), 
+                                                htmlspecialchars($value["status"]) 
+                                            );
                                             echo $card;
                                     }}?>
                                 
@@ -93,7 +101,11 @@ try {
                                 <!-- Insert tasks -->
                                 <?php foreach($tasks as $task => $value) {                                        
                                     if ($value["status"] == "H") {
-                                        $card = create_card($value["description"]);
+                                        $card = create_card(
+                                            htmlspecialchars($value["description"]), 
+                                            htmlspecialchars($value["id_task"]), 
+                                            htmlspecialchars($value["status"]) 
+                                        );
                                         echo $card;
                                 }}?>
 
@@ -116,7 +128,11 @@ try {
                                 <!-- Insert tasks -->
                                 <?php foreach($tasks as $task => $value) {      
                                     if ($value["status"] == "C") {
-                                        $card = create_card($value["description"]);
+                                        $card = create_card(
+                                            htmlspecialchars($value["description"]), 
+                                            htmlspecialchars($value["id_task"]), 
+                                            htmlspecialchars($value["status"]) 
+                                        );
                                         echo $card;
                                 }}?>
 

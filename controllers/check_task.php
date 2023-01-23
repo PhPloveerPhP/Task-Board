@@ -5,11 +5,6 @@ foreach ($_POST["check"] as $key => $value) {
     $id = (array_keys($value)[0]);
 }
 
-$result = [
-    'error' => false,
-    'message' => 'Check :)',
-];
-
 $config = include './config/config.php';
 
 if ($status == "U") {

@@ -1,6 +1,4 @@
-<?php 
-    if (isset($_POST['submit'])) {
-
+<?php
         $result = [
             'error' => false,
             'message' => 'Tarea creada con exito'
@@ -26,9 +24,8 @@
             $sentence->execute();
 
         } catch (PDOException $error) {
-            echo "hola";
             $result['error'] = true;
             $result['message'] = $error->getMessage();
         }
-    }
+    
 ?>

@@ -13,12 +13,21 @@
 
 
 <!-- Checking Array of Tasks -->
-<?php if ($tasks && $sentence->rowCount() > 0): ?>
 
 <?php include "Parts/board_header.php"?>
 
     <body>
-
+    <?php if (isset($result)):?>
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-<?= $result['error'] ? 'danger' : 'success' ?>" role="alert">
+                            <?= $result['message'] ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php endif?>
         <main class="content">
             <div class="container p-0">
                 <h1 class="h3 mb-3">My Board</h1>
@@ -145,17 +154,7 @@
                 </div>
             </div>
 
-            <?php if (isset($resultado)):?>
-            <div class="container mt-3">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="alert alert-<?= $resultado['error'] ? 'danger' : 'success' ?>" role="alert">
-                            <?= $resultado['mensaje'] ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php endif?>
+
 
         </main>
 
@@ -164,4 +163,3 @@
         <?php include "Parts/footer.php"?>
 
 
-<?php endif ?>

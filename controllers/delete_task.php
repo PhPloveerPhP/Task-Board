@@ -22,7 +22,6 @@ try {
     $sentence->execute();
 
 } catch (PDOException $error) {
-    echo "hola";
     $result['error'] = true;
     $result['message'] = $error->getMessage();
 }

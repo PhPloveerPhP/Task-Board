@@ -12,7 +12,7 @@ function create_card(string $description, string $id, string $status): string
             <div class="card-body p-3">
                 <div class="float-right mr-n2">
                     <label class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" />
+                        <input type="checkbox" class="custom-control-input" name="check[$status][$id]" onChange="submit()" />
                         <span class="custom-control-label"></span>
                     </label>
                 </div>

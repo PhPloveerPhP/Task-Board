@@ -8,6 +8,11 @@
     include "./controllers/delete_task.php"
 ?>
 
+<!-- Check Task -->
+<?php if(isset($_POST["check"]))
+    include "./controllers/check_task.php"
+?>
+
 <!-- Showing Tasks -->
 <?php include './controllers/show_tasks.php'?>
 

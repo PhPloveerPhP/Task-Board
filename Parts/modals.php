@@ -17,7 +17,7 @@
             <textarea class="form-control" name="task_description" rows="3"></textarea>
           </div>
 
-          <select class="custom-select" name="task_status">
+          <select class="custom-select" name="task_status" required >
             <option selected hidden>Choose...</option>
             <option value="U">Upcoming</option>
             <option value="P">Progessing</option>

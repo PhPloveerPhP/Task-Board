@@ -1,3 +1,6 @@
+<!-- Session -->
+<?php session_start() ?>
+<?php $_SESSION["id_user"] ?>
 <!-- Create Task -->
 <?php if (isset($_POST["submit"]))
     include "./controllers/create_task.php" 
@@ -33,6 +36,7 @@
                 </div>
             </div>
             <?php endif?>
+
         <main class="content">
             <div class="container p-0">
                 <h1 class="h3 mb-3">My Board</h1>

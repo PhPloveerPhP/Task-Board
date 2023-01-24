@@ -38,7 +38,7 @@
               <h3>Sing In to <strong>Kanbing</strong></h3>
               <p class="mb-4">Trust us and change you way of organizing projects.</p>
             </div>
-            <form action="#" method="post">
+            <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
               <div class="form-group first">
                 <label for="username">Username</label>
                 <input type="text" class="form-control" name="username" required>

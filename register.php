@@ -1,12 +1,9 @@
-
 <?php if(isset($_POST["submit"])) 
   include "./controllers/register_user.php";
 ?>
 
 
 <?php include './Parts/index_header.php'; ?>
-
-
 
 <?php if(isset($handler)): ?>
     <?php if(!$handler): ?>

@@ -10,7 +10,7 @@
         <div class="row justify-content-center">
           <div class="col-md-8">
             <div class="mb-4">
-              <h3>Sign In to <strong>Kanbing</strong></h3>
+              <h3>Log In to <strong>Kanbing</strong></h3>
               <p class="mb-4">Trust us and change you way of organizing projects.</p>
             </div>
             <form action="#" method="post">
@@ -29,25 +29,12 @@
                   <input type="checkbox" checked="checked" />
                   <div class="control__indicator"></div>
                 </label>
-                <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
+                <span class="ml-auto"><a href="./register.php" class="forgot-pass">You don't have an account?</a></span>
               </div>
 
               <input type="submit" value="Log In" class="btn btn-login text-white btn-block btn-primary">
 
-              <span class="d-block text-left my-4 text-muted"> or sign in with</span>
 
-              <div class="social-login">
-                <a href="#" class="facebook">
-                  <span class="icon-facebook mr-3"></span>
-                </a>
-                <a href="#" class="twitter">
-                  <span class="icon-twitter mr-3"></span>
-                </a>
-                <a href="#" class="google">
-                  <span class="icon-google mr-3"></span>
-                </a>
-                
-              </div>
             </form>
           </div>
         </div>

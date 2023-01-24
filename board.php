@@ -17,7 +17,7 @@
 <?php include './controllers/show_tasks.php'?>
 
 
-<!-- Checking Array of Tasks -->
+<!-- Showing Array of Tasks -->
 
 <?php include "Parts/board_header.php"?>
 

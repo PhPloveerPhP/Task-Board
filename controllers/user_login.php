@@ -35,8 +35,15 @@ try {
         $find_user = $sentence->fetch(PDO::FETCH_ASSOC);        
 
         if ($user["passw"] == $find_user["passw"]){
-            $_SESSION["id"] = $find_user["id_user"];
-        
+            $_SESSION["id"] = $find_user["id_user"]; 
+        ?>
+
+            <script>
+                window.location.href = "./board.php";
+            </script>
+
+        <?php   
+
         } else {
             $result = [
                 'error' => true,

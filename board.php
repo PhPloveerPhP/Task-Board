@@ -1,6 +1,6 @@
 <!-- Session -->
 <?php session_start() ?>
-<?php $_SESSION["id_user"] ?>
+
 <!-- Create Task -->
 <?php if (isset($_POST["submit"]))
     include "./controllers/create_task.php" 
@@ -18,7 +18,6 @@
 
 <!-- Showing Tasks -->
 <?php include './controllers/show_tasks.php'?>
-
 
 <!-- Showing Array of Tasks -->
 

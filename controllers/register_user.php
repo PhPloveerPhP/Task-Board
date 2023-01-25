@@ -35,7 +35,13 @@
             $sentence->bindParam(1, $user["name"]);
             $sentence->bindParam(2, $user["email"]);
             $sentence->bindParam(3, $user["passw"]);
-            $sentence->execute();
+            $sentence->execute(); ?>
+
+        <script>
+          window.location.href = "./index.php";
+        </script>
+        
+        <?php
 
         } else {
             $result["error"] = false;

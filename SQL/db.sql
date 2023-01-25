@@ -18,3 +18,5 @@ create table IF NOT EXISTS tasks (
     status ENUM("U", "P", "H", "C") NOT NULL default "U",
     FOREIGN KEY (id_user) REFERENCES users(id_user)
 );
+
+insert into tasks (id_user, description, status) values (3, "hola", "U");

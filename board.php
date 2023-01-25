@@ -1,6 +1,9 @@
 <!-- Session -->
 <?php session_start() ?>
 
+<!-- Check Session -->
+
+
 <!-- Create Task -->
 <?php if (isset($_POST["submit"]))
     include "./controllers/create_task.php" 
@@ -17,10 +20,9 @@
 ?>
 
 <!-- Showing Tasks -->
-<?php include './controllers/show_tasks.php'?>
+<?php include './controllers/show_tasks.php' ?>
 
 <!-- Showing Array of Tasks -->
-
 <?php include "Parts/board_header.php"?>
 
     <body>
@@ -167,7 +169,5 @@
         </main>
 
 
-        <?php include "Parts/modals.php"?>
-        <?php include "Parts/footer.php"?>
-
-
+        <?php include "Parts/modals.php" ?>
+        <?php include "Parts/footer.php" ?>

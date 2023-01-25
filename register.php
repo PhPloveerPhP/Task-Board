@@ -49,7 +49,7 @@
                 <input type="password" class="form-control" name="password" required>
               </div>
 
-              <input type="submit" value="Log In" name="submit" class="btn btn-login text-white btn-block btn-primary">
+              <input type="submit" value="Register" name="submit" class="btn btn-login text-white btn-block btn-primary">
               <br>
               <div class="d-flex mb-5 align-items-center">
                 <span class="ml-auto"><a href="./index.php" class="forgot-pass">You already have an account?</a></span>

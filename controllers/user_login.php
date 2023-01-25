@@ -63,6 +63,4 @@ try {
     $result['message'] = $error->getMessage();
 }
 
-
-
 ?>

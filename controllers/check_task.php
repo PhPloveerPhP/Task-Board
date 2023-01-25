@@ -15,7 +15,7 @@ if ($status == "C") {
         $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
 
         $task = [
-            "id_user" => 1,
+            "id_user" => $_SESSION["id"],
             "id_task" => $id,
         ];
 
@@ -41,7 +41,7 @@ if ($status == "C") {
 
     try {
         $task = [
-            "id_user" => 1,
+            "id_user" => $_SESSION["id"],
             "id_task" => $id,
             "status" => $status,
         ];

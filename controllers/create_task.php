@@ -18,7 +18,7 @@
                 $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
                 
                 $task = [
-                    "id_user" => 1,
+                    "id_user" => $_SESSION["id"],
                     "description" => $_POST["task_description"],
                     "status" => $_POST["task_status"], 
                 ];

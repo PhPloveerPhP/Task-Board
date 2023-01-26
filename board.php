@@ -12,6 +12,8 @@
 <!-- Check Task -->
 <?php if(isset($_POST["check"]))
     include "./controllers/check_task.php" ?>
+<!-- Edit T -->
+
 <!-- Check Logout -->
 <?php if(isset($_POST["logout"])): ?>
     <?php session_destroy(); ?>

@@ -5,7 +5,6 @@ declare (strict_types = 1);
 function create_card(string $description, string $id, string $status): string
 {
     $server = $_SERVER["PHP_SELF"];
-
     $card_template = <<<delimiter
     <div class="card mb-3 bg-light">
         <form action="$server" method="post">
@@ -23,17 +22,19 @@ function create_card(string $description, string $id, string $status): string
                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png" width="32"
                         height="32" class="rounded-circle" alt="Avatar" />
                 </div>
-                <button type="button" data-toggle="modal" data-target="#edit_task" class="btn btn-outline-primary btn-sm">Edit</button>
+                <button type="button" data-toggle="modal" data-target="#edit_task" name="edit[$id]" class="btn btn-outline-primary btn-sm">Edit</button>
                 <button class="btn btn-outline-danger btn-sm" type="submit" name="delete[$id]">Delete</button>
             </div>
         </form>
     </div>
     delimiter;
-
     return $card_template;
-
 }
 
 function codificarHTML(string $string): string {
     return htmlspecialchars($string, ENT_NOQUOTES | ENT_SUBSTITUTE, "UTF-8");
 };
+
+function editModal() {
+
+}

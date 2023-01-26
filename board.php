@@ -42,18 +42,17 @@
                 <div class="dropdown">
 
 
-                    <div class="user-logged" >
-                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" width="40" height="40"
-                            class="rounded-circle" alt="Avatar" type="button" id="dropUser" data-toggle="dropdown" />
+                    <div class="user-logged" type="button" id="dropUser" data-toggle="dropdown">
+                        <img src= <?php echo "https://bootdey.com/img/Content/avatar/avatar" . $_SESSION["id"] .".png" ?> width="40" height="40"
+                            class="rounded-circle" alt="Avatar"/>
                         <span class="logged-in">●</span>
                     </div>
 
                         
 
-                    <div class="dropdown-menu" aria-labelledby="dropUser">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item">Log out</a>
+
                     </div>
                 </div>
             </div>
@@ -67,7 +66,7 @@
                         <div class="card-header">
                             <h5 class="card-title">Upcoming</h5>
                             <h6 class="card-subtitle text-muted">
-                                Nam pretium turpis et arcu. Duis arcu tortor.
+                                Task recenty created
                             </h6>
                         </div>
                         <div class="card-body p-3">
@@ -96,7 +95,7 @@
                         <div class="card-header">
                             <h5 class="card-title">In Progress</h5>
                             <h6 class="card-subtitle text-muted">
-                                Nam pretium turpis et arcu. Duis arcu tortor.
+                                Tasks currently in progress
                             </h6>
                         </div>
                         <div class="card-body">
@@ -126,7 +125,7 @@
                         <div class="card-header">
                             <h5 class="card-title">On hold</h5>
                             <h6 class="card-subtitle text-muted">
-                                Nam pretium turpis et arcu. Duis arcu tortor.
+                                Waiting for approvement
                             </h6>
                         </div>
                         <div class="card-body">
@@ -156,7 +155,7 @@
                         <div class="card-header">
                             <h5 class="card-title">Completed</h5>
                             <h6 class="card-subtitle text-muted">
-                                Nam pretium turpis et arcu. Duis arcu tortor.
+                                Completed tasks
                             </h6>
                         </div>
                         <div class="card-body">

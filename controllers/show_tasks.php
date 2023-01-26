@@ -13,7 +13,7 @@ try {
     $sentence->execute();
     $tasks = $sentence->fetchAll();
 
-}
+
 
 
 } catch (PDOException $error) {

@@ -7,19 +7,20 @@
 
 <?php include './Parts/index_header.php'; ?>
 
-<?php if (isset($result)):?>
-  <div class="container mt-3">
-      <div class="row">
-          <div class="col-md-12">
-              <div class="alert alert-<?= $result['error'] ? 'danger' : 'success' ?>" role="alert">
-                  <?= $result['message'] ?>
-              </div>
-          </div>
-      </div>
-  </div>
-<?php endif?>
+
             
 <div class="content">
+  <?php if (isset($result)):?>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-<?= $result['error'] ? 'danger' : 'success' ?>" role="alert">
+                    <?= $result['message'] ?>
+                </div>
+            </div>
+        </div>
+    </div>
+  <?php endif?>
   <div class="container">
     <div class="row">
       <div class="col-md-6 order-md-2">

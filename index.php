@@ -23,6 +23,8 @@
 
 
   <div class="container">
+
+  
       <div class="row">
         <div class="col-md-6 order-md-2">
           <img src="images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid">
@@ -37,12 +39,12 @@
               <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
                 <div class="form-group first">
                   <label for="username">Username</label>
-                  <input type="text" class="form-control" name="username">
+                  <input type="text" class="form-control" name="username" required>
 
                 </div>
                 <div class="form-group last mb-4">
                   <label for="password">Password</label>
-                  <input type="password" class="form-control" name="password">
+                  <input type="password" class="form-control" name="password" required>
                 </div>
 
                 <div class="d-flex mb-5 align-items-center">

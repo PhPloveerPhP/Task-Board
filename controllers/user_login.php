@@ -16,6 +16,7 @@ try {
     $sentence = $conexion->prepare("SELECT * FROM users");
     $sentence->execute();
     $arr_users = $sentence->fetchAll(PDO::FETCH_ASSOC);
+    $handler = "";
 
     $user = [
         'name' => $_POST["username"],

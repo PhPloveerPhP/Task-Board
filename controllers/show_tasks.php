@@ -13,13 +13,7 @@ try {
     $sentence->execute();
     $tasks = $sentence->fetchAll();
 
-    if (count($tasks) <= 0) {
-        $result = [
-            'error' => true,
-            'message' => 'No tasks were found'
-        ];
-
-    }
+}
 
 
 } catch (PDOException $error) {

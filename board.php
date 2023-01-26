@@ -2,24 +2,16 @@
 
 <!-- Create Task -->
 <?php if (isset($_POST["submit"]))
-    include "./controllers/create_task.php" 
-?>
-
+    include "./controllers/create_task.php" ?>
 <!-- Edit Task -->
 <?php if(isset($_POST["edit"]))
-    include "./controllers/edit_task.php"
-?>
-
+    include "./controllers/edit_task.php" ?>
 <!-- Delete Task -->
 <?php if(isset($_POST["delete"]))
-    include "./controllers/delete_task.php"
-?>
-
+    include "./controllers/delete_task.php" ?>
 <!-- Check Task -->
 <?php if(isset($_POST["check"]))
-    include "./controllers/check_task.php"
-?>
-
+    include "./controllers/check_task.php" ?>
 <!-- Check Logout -->
 <?php if(isset($_POST["logout"])): ?>
     <?php session_destroy(); ?>
@@ -27,10 +19,14 @@
         window.location.href = "./index.php";
     </script>
 <?php endif ?>
-
+<!-- User Delte Session -->
+<?php if(!isset($_SESSION["id"])): ?>
+    <script>
+        window.location.href = "./index.php";
+    </script>
+<?php endif ?>
 <!-- Showing Tasks -->
 <?php include './controllers/show_tasks.php' ?>
-
 <!-- Header of the Page -->
 <?php include "Parts/board_header.php"?>
 
@@ -46,36 +42,26 @@
         </div>
     </div>
     <?php endif?>
-
     <main class="content">
         <div class="container p-0">
-
             <div class="container-fluid" style="display: flex; justify-content: space-between;">
                 <h1 class="h3 mb-3">My Board</h1>
                 <div class="dropdown">
-
-
                     <div class="user-logged" type="button" id="dropUser" data-toggle="dropdown">
                         <img src= <?php echo "https://bootdey.com/img/Content/avatar/avatar" . $_SESSION["id"] .".png" ?> width="40" height="40"
                             class="rounded-circle" alt="Avatar"/>
                         <span class="logged-in">●</span>
                     </div>
-
                         
-
                     <div class="dropdown-menu">
                         <form action="<?php $_SERVER["PHP_SELF"] ?>" method="post">
                             <button class="dropdown-item log-out" name="logout">Log out</button>
                         </form>
                         
-
                     </div>
                 </div>
             </div>
-
-
             <div class="row">
-
                 <!-- Upcoming Column -->
                 <div class="col-12 col-lg-6 col-xl-3">
                     <div class="card card-border-primary">
@@ -86,7 +72,6 @@
                             </h6>
                         </div>
                         <div class="card-body p-3">
-
                             <?php foreach ($tasks as $task => $value) {
                                         if ($value["status"] == "U") {
                                             $card = create_card(
@@ -96,15 +81,11 @@
                                             );
                                             echo $card;
                                     }}?>
-
-
                             <button href="#" data-toggle="modal" data-target="#create_task"
                                 class="btn btn-card btn-primary btn-block">Add new</button>
-
                         </div>
                     </div>
                 </div>
-
                 <!-- In Progress Column-->
                 <div class="col-12 col-lg-6 col-xl-3">
                     <div class="card card-border-warning">
@@ -115,7 +96,6 @@
                             </h6>
                         </div>
                         <div class="card-body">
-
                             <!-- Insert tasks -->
                             <?php foreach ($tasks as $task => $value) {
                                         if ($value["status"] == "P") {
@@ -126,15 +106,11 @@
                                             );
                                             echo $card;
                                     }}?>
-
-
                             <button href="#" data-toggle="modal" data-target="#create_task"
                                 class="btn btn-card btn-primary btn-block">Add new</button>
-
                         </div>
                     </div>
                 </div>
-
                 <!-- On Hold Column-->
                 <div class="col-12 col-lg-6 col-xl-3">
                     <div class="card card-border-danger">
@@ -145,7 +121,6 @@
                             </h6>
                         </div>
                         <div class="card-body">
-
                             <!-- Insert tasks -->
                             <?php foreach ($tasks as $task => $value) {
                                         if ($value["status"] == "H") {
@@ -156,15 +131,11 @@
                                             );
                                             echo $card;
                                     }}?>
-
-
                             <button href="#" data-toggle="modal" data-target="#create_task"
                                 class="btn btn-card btn-primary btn-block">Add new</button>
-
                         </div>
                     </div>
                 </div>
-
                 <!-- Completed Column -->
                 <div class="col-12 col-lg-6 col-xl-3">
                     <div class="card card-border-success">
@@ -175,7 +146,6 @@
                             </h6>
                         </div>
                         <div class="card-body">
-
                             <!-- Insert tasks -->
                             <?php foreach ($tasks as $task => $value) {
                                         if ($value["status"] == "C") {
@@ -186,20 +156,13 @@
                                             );
                                             echo $card;
                                     }}?>
-
                             <button href="#" data-toggle="modal" data-target="#create_task"
                                 class="btn btn-card btn-primary btn-block">Add new</button>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-
-
-
     </main>
-
-
     <?php include "Parts/modals.php" ?>
     <?php include "Parts/footer.php" ?>

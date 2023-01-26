@@ -21,37 +21,58 @@
 <!-- Showing Array of Tasks -->
 <?php include "Parts/board_header.php"?>
 
-    <body>
+<body>
     <?php if (isset($result)):?>
-            <div class="container mt-3">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="alert alert-<?= $result['error'] ? 'danger' : 'success' ?>" role="alert">
-                            <?= $result['message'] ?>
-                        </div>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-<?= $result['error'] ? 'danger' : 'success' ?>" role="alert">
+                    <?= $result['message'] ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endif?>
+
+    <main class="content">
+        <div class="container p-0">
+
+            <div class="container-fluid" style="display: flex; justify-content: space-between;">
+                <h1 class="h3 mb-3">My Board</h1>
+                <div class="dropdown">
+
+
+                    <div class="user-logged" >
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" width="40" height="40"
+                            class="rounded-circle" alt="Avatar" type="button" id="dropUser" data-toggle="dropdown" />
+                        <span class="logged-in">●</span>
+                    </div>
+
+                        
+
+                    <div class="dropdown-menu" aria-labelledby="dropUser">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </div>
             </div>
-            <?php endif?>
 
-        <main class="content">
-            <div class="container p-0">
-                <h1 class="h3 mb-3">My Board</h1>
 
-                <div class="row">
+            <div class="row">
 
-                    <!-- Upcoming Column -->
-                    <div class="col-12 col-lg-6 col-xl-3">
-                        <div class="card card-border-primary">
-                            <div class="card-header">
-                                <h5 class="card-title">Upcoming</h5>
-                                <h6 class="card-subtitle text-muted">
-                                    Nam pretium turpis et arcu. Duis arcu tortor.
-                                </h6>
-                            </div>
-                            <div class="card-body p-3">
+                <!-- Upcoming Column -->
+                <div class="col-12 col-lg-6 col-xl-3">
+                    <div class="card card-border-primary">
+                        <div class="card-header">
+                            <h5 class="card-title">Upcoming</h5>
+                            <h6 class="card-subtitle text-muted">
+                                Nam pretium turpis et arcu. Duis arcu tortor.
+                            </h6>
+                        </div>
+                        <div class="card-body p-3">
 
-                                <?php foreach ($tasks as $task => $value) {
+                            <?php foreach ($tasks as $task => $value) {
                                         if ($value["status"] == "U") {
                                             $card = create_card(
                                                 htmlspecialchars($value["description"]),
@@ -62,26 +83,26 @@
                                     }}?>
 
 
-                                <button href="#" data-toggle="modal" data-target="#create_task"
-                                    class="btn btn-card btn-primary btn-block">Add new</button>
+                            <button href="#" data-toggle="modal" data-target="#create_task"
+                                class="btn btn-card btn-primary btn-block">Add new</button>
 
-                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- In Progress Column-->
-                    <div class="col-12 col-lg-6 col-xl-3">
-                        <div class="card card-border-warning">
-                            <div class="card-header">
-                                <h5 class="card-title">In Progress</h5>
-                                <h6 class="card-subtitle text-muted">
-                                    Nam pretium turpis et arcu. Duis arcu tortor.
-                                </h6>
-                            </div>
-                            <div class="card-body">
+                <!-- In Progress Column-->
+                <div class="col-12 col-lg-6 col-xl-3">
+                    <div class="card card-border-warning">
+                        <div class="card-header">
+                            <h5 class="card-title">In Progress</h5>
+                            <h6 class="card-subtitle text-muted">
+                                Nam pretium turpis et arcu. Duis arcu tortor.
+                            </h6>
+                        </div>
+                        <div class="card-body">
 
-                                <!-- Insert tasks -->
-                                <?php foreach ($tasks as $task => $value) {
+                            <!-- Insert tasks -->
+                            <?php foreach ($tasks as $task => $value) {
                                         if ($value["status"] == "P") {
                                             $card = create_card(
                                                 htmlspecialchars($value["description"]),
@@ -92,26 +113,26 @@
                                     }}?>
 
 
-                                <button href="#" data-toggle="modal" data-target="#create_task"
-                                    class="btn btn-card btn-primary btn-block">Add new</button>
+                            <button href="#" data-toggle="modal" data-target="#create_task"
+                                class="btn btn-card btn-primary btn-block">Add new</button>
 
-                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- On Hold Column-->
-                    <div class="col-12 col-lg-6 col-xl-3">
-                        <div class="card card-border-danger">
-                            <div class="card-header">
-                                <h5 class="card-title">On hold</h5>
-                                <h6 class="card-subtitle text-muted">
-                                    Nam pretium turpis et arcu. Duis arcu tortor.
-                                </h6>
-                            </div>
-                            <div class="card-body">
+                <!-- On Hold Column-->
+                <div class="col-12 col-lg-6 col-xl-3">
+                    <div class="card card-border-danger">
+                        <div class="card-header">
+                            <h5 class="card-title">On hold</h5>
+                            <h6 class="card-subtitle text-muted">
+                                Nam pretium turpis et arcu. Duis arcu tortor.
+                            </h6>
+                        </div>
+                        <div class="card-body">
 
-                                <!-- Insert tasks -->
-                                <?php foreach ($tasks as $task => $value) {
+                            <!-- Insert tasks -->
+                            <?php foreach ($tasks as $task => $value) {
                                         if ($value["status"] == "H") {
                                             $card = create_card(
                                                 htmlspecialchars($value["description"]),
@@ -122,26 +143,26 @@
                                     }}?>
 
 
-                                <button href="#" data-toggle="modal" data-target="#create_task"
-                                    class="btn btn-card btn-primary btn-block">Add new</button>
+                            <button href="#" data-toggle="modal" data-target="#create_task"
+                                class="btn btn-card btn-primary btn-block">Add new</button>
 
-                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Completed Column -->
-                    <div class="col-12 col-lg-6 col-xl-3">
-                        <div class="card card-border-success">
-                            <div class="card-header">
-                                <h5 class="card-title">Completed</h5>
-                                <h6 class="card-subtitle text-muted">
-                                    Nam pretium turpis et arcu. Duis arcu tortor.
-                                </h6>
-                            </div>
-                            <div class="card-body">
+                <!-- Completed Column -->
+                <div class="col-12 col-lg-6 col-xl-3">
+                    <div class="card card-border-success">
+                        <div class="card-header">
+                            <h5 class="card-title">Completed</h5>
+                            <h6 class="card-subtitle text-muted">
+                                Nam pretium turpis et arcu. Duis arcu tortor.
+                            </h6>
+                        </div>
+                        <div class="card-body">
 
-                                <!-- Insert tasks -->
-                                <?php foreach ($tasks as $task => $value) {
+                            <!-- Insert tasks -->
+                            <?php foreach ($tasks as $task => $value) {
                                         if ($value["status"] == "C") {
                                             $card = create_card(
                                                 htmlspecialchars($value["description"]),
@@ -151,19 +172,19 @@
                                             echo $card;
                                     }}?>
 
-                                <button href="#" data-toggle="modal" data-target="#create_task"
-                                    class="btn btn-card btn-primary btn-block" >Add new</button>
-                            </div>
+                            <button href="#" data-toggle="modal" data-target="#create_task"
+                                class="btn btn-card btn-primary btn-block">Add new</button>
                         </div>
                     </div>
-
                 </div>
+
             </div>
+        </div>
 
 
 
-        </main>
+    </main>
 
 
-        <?php include "Parts/modals.php" ?>
-        <?php include "Parts/footer.php" ?>
+    <?php include "Parts/modals.php" ?>
+    <?php include "Parts/footer.php" ?>

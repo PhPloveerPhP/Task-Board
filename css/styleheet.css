@@ -124,3 +124,15 @@ body {
     background-color: #38d39f;
     border-color: #38d39f;
 }
+
+.user-logged{
+    display: flex;
+    flex-direction: column;
+}
+
+.logged-in {
+    color: green;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}

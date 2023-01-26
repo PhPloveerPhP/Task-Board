@@ -5,6 +5,11 @@
     include "./controllers/create_task.php" 
 ?>
 
+<!-- Edit Task -->
+<?php if(isset($_POST["edit"]))
+    include "./controllers/edit_task.php"
+?>
+
 <!-- Delete Task -->
 <?php if(isset($_POST["delete"]))
     include "./controllers/delete_task.php"
@@ -22,7 +27,6 @@
         window.location.href = "./index.php";
     </script>
 <?php endif ?>
-
 
 <!-- Showing Tasks -->
 <?php include './controllers/show_tasks.php' ?>

@@ -7,7 +7,6 @@ foreach ($_POST["check"] as $key => $value) {
 
 $config = include './config/config.php';
 
-
 if ($status == "C") {
 
     try {
@@ -30,14 +29,14 @@ if ($status == "C") {
     }
 
 } else {
-    
+
     if ($status == "U") {
         $status = "P";
     } elseif ($status == "P") {
         $status = "H";
     } elseif ($status == "H") {
         $status = "C";
-    } 
+    }
 
     try {
         $task = [
@@ -45,21 +44,19 @@ if ($status == "C") {
             "id_task" => $id,
             "status" => $status,
         ];
-    
+
         $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
         $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
-    
+
         $sentence = $conexion->prepare("UPDATE tasks SET status = ? where id_task = ? and id_user = ?");
         $sentence->bindParam(1, $task["status"]);
         $sentence->bindParam(2, $task["id_task"]);
         $sentence->bindParam(3, $task["id_user"]);
         $sentence->execute();
-    
+
     } catch (PDOException $error) {
         $result['error'] = true;
         $result['message'] = $error->getMessage();
     }
 
-
 }
-

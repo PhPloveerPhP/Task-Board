@@ -23,7 +23,7 @@ function create_card(string $description, string $id, string $status): string
                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png" width="32"
                         height="32" class="rounded-circle" alt="Avatar" />
                 </div>
-                <a class="btn btn-outline-primary btn-sm" href="#">View</a>
+                <button type="button" data-toggle="modal" data-target="#edit_task" class="btn btn-outline-primary btn-sm">Edit</button>
                 <button class="btn btn-outline-danger btn-sm" type="submit" name="delete[$id]">Delete</button>
             </div>
         </form>
@@ -31,6 +31,7 @@ function create_card(string $description, string $id, string $status): string
     delimiter;
 
     return $card_template;
+
 }
 
 function codificarHTML(string $string): string {

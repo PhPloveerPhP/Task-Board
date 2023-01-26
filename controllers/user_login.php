@@ -2,12 +2,10 @@
 
 $config = include './config/config.php';
 
-
 try {
 
-    $dsn = 'mysql:host='.$config['db']['host'].';dbname='.$config['db']['name'];
+    $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
     $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
-
 
     $sentence = $conexion->prepare("SELECT * FROM users");
     $sentence->execute();
@@ -19,36 +17,34 @@ try {
         'passw' => $_POST["password"],
     ];
 
-    foreach($arr_users as $users => $value){
-       if($value["name"] == $user["name"]){
+    foreach ($arr_users as $users => $value) {
+        if ($value["name"] == $user["name"]) {
             $handler = true;
-       }
+        }
     }
 
-    if($handler){
+    if ($handler) {
 
-        $sentence = $conexion->prepare("SELECT passw, id_user from users where name='".$user["name"]."'");
+        $sentence = $conexion->prepare("SELECT passw, id_user from users where name='" . $user["name"] . "'");
         $sentence->execute();
-        $find_user = $sentence->fetch(PDO::FETCH_ASSOC);        
+        $find_user = $sentence->fetch(PDO::FETCH_ASSOC);
 
-        if ($user["passw"] == $find_user["passw"]){
-            $_SESSION["id"] = $find_user["id_user"]; 
-        ?>
+        if ($user["passw"] == $find_user["passw"]) {
+            $_SESSION["id"] = $find_user["id_user"];
+            ?>
 
             <script>
                 window.location.href = "./board.php";
             </script>
 
-        <?php   
+        <?php
 
         } else {
             $result = [
                 'error' => true,
-                'message' => 'Incorrect password'
+                'message' => 'Incorrect password',
             ];
         }
-
-
 
     } else {
         $result["error"] = true;

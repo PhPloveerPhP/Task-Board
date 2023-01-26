@@ -1,14 +1,14 @@
-<?php 
+<?php
 
 $result = [
     'error' => false,
-    'message' => 'Tarea eliminada con exito'
+    'message' => 'Tarea eliminada con exito',
 ];
 
 $config = include './config/config.php';
 
 try {
-    $dsn = 'mysql:host='.$config['db']['host'].';dbname='.$config['db']['name'];
+    $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
     $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
 
     $task = [
@@ -25,5 +25,3 @@ try {
     $result['error'] = true;
     $result['message'] = $error->getMessage();
 }
-
-?>

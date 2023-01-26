@@ -4,7 +4,6 @@
   include "./controllers/user_login.php"
 ?>
 
-
 <?php include './Parts/index_header.php'; ?>
 
 <div class="content">

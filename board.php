@@ -15,10 +15,19 @@
     include "./controllers/check_task.php"
 ?>
 
+<!-- Check Logout -->
+<?php if(isset($_POST["logout"])): ?>
+    <?php session_destroy(); ?>
+    <script>
+        window.location.href = "./index.php";
+    </script>
+<?php endif ?>
+
+
 <!-- Showing Tasks -->
 <?php include './controllers/show_tasks.php' ?>
 
-<!-- Showing Array of Tasks -->
+<!-- Header of the Page -->
 <?php include "Parts/board_header.php"?>
 
 <body>
@@ -51,7 +60,10 @@
                         
 
                     <div class="dropdown-menu">
-                        <a class="dropdown-item">Log out</a>
+                        <form action="<?php $_SERVER["PHP_SELF"] ?>" method="post">
+                            <button class="dropdown-item log-out" name="logout">Log out</button>
+                        </form>
+                        
 
                     </div>
                 </div>

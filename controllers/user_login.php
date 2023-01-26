@@ -2,10 +2,6 @@
 
 $config = include './config/config.php';
 
-$result = [
-    'error' => false,
-    'message' => ''
-];
 
 try {
 

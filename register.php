@@ -1,4 +1,3 @@
-<!-- Session -->
 <?php session_start() ?>
 
 <?php if(isset($_POST["submit"])) 

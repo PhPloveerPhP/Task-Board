@@ -1,8 +1,4 @@
-<!-- Session -->
-<?php session_start() ?>
-
-<!-- Check Session -->
-
+<?php session_start(); ?>
 
 <!-- Create Task -->
 <?php if (isset($_POST["submit"]))

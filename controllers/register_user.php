@@ -44,7 +44,7 @@
         <?php
 
         } else {
-            $result["error"] = false;
+            $result["error"] = true;
             $result["message"] = " This user already exists";
         }
 

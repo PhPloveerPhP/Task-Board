@@ -13,7 +13,7 @@ try {
 
     $task = [
         "id_user" => $_SESSION["id"],
-        "id_task" => array_keys($_POST["delete"])[0],
+        "id_task" => intval($_POST["delete"]),
     ];
 
     $sentence = $conexion->prepare("DELETE FROM tasks WHERE id_task = :task and id_user = :user");

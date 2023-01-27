@@ -1,13 +1,11 @@
 <?php
-$status = (array_keys($_POST["check"]))[0];
 
-foreach ($_POST["check"] as $key => $value) {
-    $id = (array_keys($value)[0]);
-}
+$arr = explode(",", $_POST["check"]);
+
 
 $config = include './config/config.php';
 
-if ($status == "C") {
+if ($arr[0] == "C") {
 
     try {
         $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
@@ -15,7 +13,7 @@ if ($status == "C") {
 
         $task = [
             "id_user" => $_SESSION["id"],
-            "id_task" => $id,
+            "id_task" => $arr[1],
         ];
 
         $sentence = $conexion->prepare("DELETE FROM tasks WHERE id_task = :task and id_user = :user");
@@ -30,19 +28,19 @@ if ($status == "C") {
 
 } else {
 
-    if ($status == "U") {
-        $status = "P";
-    } elseif ($status == "P") {
-        $status = "H";
-    } elseif ($status == "H") {
-        $status = "C";
+    if ($arr[0] == "U") {
+        $arr[0] = "P";
+    } elseif ($arr[0] == "P") {
+        $arr[0] = "H";
+    } elseif ($arr[0] == "H") {
+        $arr[0] = "C";
     }
 
     try {
         $task = [
             "id_user" => $_SESSION["id"],
-            "id_task" => $id,
-            "status" => $status,
+            "id_task" => $arr[1],
+            "status" => $arr[0],
         ];
 
         $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];

@@ -1,0 +1,12 @@
+.father_editor{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    top: 30%;
+    position: absolute;
+}
+
+.form_cont{
+    width: 20%;
+    text-align: center;
+}

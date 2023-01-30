@@ -25,3 +25,4 @@ try {
     $result['error'] = true;
     $result['message'] = $error->getMessage();
 }
+?>

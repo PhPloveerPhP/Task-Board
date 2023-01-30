@@ -16,5 +16,7 @@ create table IF NOT EXISTS tasks (
     id_user int UNSIGNED NOT NULL,
     description varchar(150) NOT NULL,
     status ENUM("U", "P", "H", "C") NOT NULL default "U",
-    FOREIGN KEY (id_user) REFERENCES users(id_user)
+    FOREIGN KEY (id_user) REFERENCES users(id_user) ON DELETE CASCADE
 );
+
+

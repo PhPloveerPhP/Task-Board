@@ -1,4 +1,26 @@
+
+<?php if (isset($_POST["delete_usr"]))
+    include "./admin_functions/delete_usr.php";
+?>
+<?php if (isset($_POST[""])): ?>
+    <script>
+        window.location.href = "../edit_user.php";
+    </script>
+<?php endif; ?>
+
+<?php if(isset($_POST["create_usr"]))
+    include "./admin_functions/create_user.php" ?>
+
+<?php if(isset($_POST["create_task"]))
+    include "./admin_functions/create_task.php" ?>
+
+<?php if(isset($_POST["delete_task"]))
+    include "./admin_functions/delete_task.php" ?>
+
+
 <?php include './admin_functions/show_users.php'?>
+<?php include './admin_functions/show_tasks.php'?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -204,11 +226,23 @@
 
                 <!-- Begin Page Content -->
 
-                <div class="container-fluid">
+                <div class="container-fluid"xº>
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                     </div>
+
+                    <?php if (isset($result)):?>
+                    <div class="container mt-3">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert alert-<?= $result['error'] ? 'danger' : 'success' ?>" role="alert">
+                                    <?= $result['message'] ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endif?>
 
                     <!-- Content Row -->
                     <div class="row">
@@ -219,7 +253,7 @@
                             <!-- Project Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Users</h6>
                                 </div>
                                 <table class="table">
                                     <thead>
@@ -233,43 +267,52 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <th scope="row"">
                                         <?php foreach($users as $user){
-                                            echo "<tr><td>". $user["id_user"]."</td></tr>";
-                                        } ?>
-                                    
-
-                                        <?php foreach($users as $user){
-                                            echo "<tr><td>". $user["name"]."</td></tr>";
-                                        } ?>
-                                        <?php foreach($users as $user){
-                                            echo "<tr><td>". $user["passw"]."</td></tr>";
-                                        } ?>
-                                        <?php foreach($users as $user){
-                                            echo "<tr><td>". $user["create_at"]."</td></tr>";
-                                        } ?>
-                                        <?php foreach($users as $user){
-                                            echo "<tr><td>". $user["update_at"]."</td></tr>";
+                                            echo "<form method='post' action" . $_SERVER["PHP_SELF"] ."><tr>
+                                            <td>". $user["id_user"]."</td>
+                                            <td>". $user["name"]."</td>
+                                            <td>". $user["email"]."</td>
+                                            <td>". $user["passw"]."</td>
+                                            <td>". $user["create_at"]."</td>
+                                            <td>". $user["update_at"]."</td>
+                                            <td><button type='submit' class='btn btn-outline-info'>Edit</button></td>
+                                            <td><button class='btn btn-outline-danger' name='delete_usr' value=".$user["id_user"].">Delete</button></td></tr></form>";
                                         } ?>
                                     </tbody>
                                 </table>
-                            
                             </div>
+
+                            <!-- Project Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Tasks</h6>
                                 </div>
-
-                            </div>
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
-                                </div>
-
-                            </div>
-
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID Task</th>
+                                            <th scope="col">ID User</th>
+                                            <th scope="col">Description</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach($tasks as $task){
+                                            echo "<form action=" . $_SERVER["PHP_SELF"] ." method='post'><tr>
+                                            <td>". $task["id_task"]."</td>
+                                            <td>". $task["id_user"]."</td>
+                                            <td>". $task["description"]."</td>
+                                            <td>". $task["status"]."</td>
+                                            <td><button class='btn btn-outline-info'>Edit</button></td>
+                                            <td><button type='' class='btn btn-outline-danger' name='delete_task' value=" . $task["id_task"] . ">Delete</button></td></tr></form>";
+                                        } ?>
+                                    </tbody>
+                                </table>
                         </div>
-
+                        <button href="#"  type='button' data-toggle='modal' data-target='#create_usr'
+                                class="btn btn-info btn-block">Add User</button>
+                        <button href="#" data-toggle="modal" data-target="#create_task"
+                                class="btn btn-success btn-block">Add Task</button>
                     </div>
                 </div>
                 <!-- /.container-fluid -->
@@ -300,13 +343,15 @@
         </div>
     </div>
 
+    <!-- User Functions Modals-->
+    <?php include "./admin_modals.php"; ?>
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
+            
 </body>
-
 </html>

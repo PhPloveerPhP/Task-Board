@@ -1,25 +1,23 @@
+<?php include './admin_functions/show_users.php'?>
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-    
-        <title>Dashboard</title>
-    
-        <!-- Custom fonts for this template-->
-        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-        <link
-            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-            rel="stylesheet">
-    
-        <!-- Custom styles for this template-->
-        <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Dashboard</title>
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+</head>
 
 <body id="page-top">
 
@@ -223,7 +221,39 @@
                                 <div class="card-header py-3">
                                     <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
                                 </div>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Passw</th>
+                                            <th scope="col">Created</th>
+                                            <th scope="col">Updated</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <th scope="row"">
+                                        <?php foreach($users as $user){
+                                            echo "<tr><td>". $user["id_user"]."</td></tr>";
+                                        } ?>
+                                    
 
+                                        <?php foreach($users as $user){
+                                            echo "<tr><td>". $user["name"]."</td></tr>";
+                                        } ?>
+                                        <?php foreach($users as $user){
+                                            echo "<tr><td>". $user["passw"]."</td></tr>";
+                                        } ?>
+                                        <?php foreach($users as $user){
+                                            echo "<tr><td>". $user["create_at"]."</td></tr>";
+                                        } ?>
+                                        <?php foreach($users as $user){
+                                            echo "<tr><td>". $user["update_at"]."</td></tr>";
+                                        } ?>
+                                    </tbody>
+                                </table>
+                            
                             </div>
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">

@@ -3,16 +3,14 @@
 <!-- Create Task -->
 <?php if (isset($_POST["submit"]))
     include "./controllers/create_task.php" ?>
-<!-- Edit Task -->
-<?php if(isset($_POST["edit"]))
-    include "./controllers/edit_task.php" ?>
+
 <!-- Delete Task -->
 <?php if(isset($_POST["delete"]))
     include "./controllers/delete_task.php" ?>
+
 <!-- Check Task -->
 <?php if(isset($_POST["check"]))
     include "./controllers/check_task.php" ?>
-<!-- Edit T -->
 
 <!-- Check Logout -->
 <?php if(isset($_POST["logout"])): ?>
@@ -21,14 +19,17 @@
         window.location.href = "./index.php";
     </script>
 <?php endif ?>
+
 <!-- User Delte Session -->
 <?php if(!isset($_SESSION["id"])): ?>
     <script>
         window.location.href = "./index.php";
     </script>
 <?php endif ?>
+
 <!-- Showing Tasks -->
 <?php include './controllers/show_tasks.php' ?>
+
 <!-- Header of the Page -->
 <?php include "Parts/board_header.php"?>
 

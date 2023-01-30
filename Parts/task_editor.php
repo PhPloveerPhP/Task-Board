@@ -1,8 +1,13 @@
-<?php if (isset($_GET['edit']))
-    include '../controllers/show_edit_task.php'; ?>
+<?php 
+
+if (isset($_GET['edit'])){
+    $info =  explode(',', $_GET['edit']);
+}
+?>
 
 <?php if(isset($_POST["update"]))
-    include "../controllers/update_edit.php" ?>
+    include "../controllers/update_task.php" ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,16 +24,16 @@
 <body>
     <div class="father_editor">
         <div class="form_cont">            
-            <form action="<?php $_SERVER["PHP_SELF"] ?>" method="post">
+            <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="post">
                 <div class="mb-3 d-flex flex-column">
-                    <label for="exampleInputEmail1" class="form-label">Task Content</label>
-                    <textarea type="text" class="form-control" placeholder="<?php echo $arr["description"] ?>" name="description" required></textarea>
-                    <textarea name="id" value="<?php $_GET["edit"]?>" hidden></textarea>
+                    <label for="Task Info" class="form-label">Task Content</label>
+                    <textarea type="text" class="form-control" placeholder="<?php echo $info[1] ?>" name="description" required></textarea>
+                    <input type="text" hidden name="id_task" value="<?php echo $info[0]?>">
                 </div>
                 <a href="../board.php" class="btn btn-card btn-dark" style="color: white;">Back</a>
                 <button type="submit" class="btn btn-card btn-primary" name="update">Update</button>
             </form>
         </div>
-    </div>    
+    </div>
 </body>
 </html>

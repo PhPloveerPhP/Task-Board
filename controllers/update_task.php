@@ -11,7 +11,7 @@ try {
     $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
 
     $task = [
-        "id_task" => intval($_GET["edit"]),
+        "id_task" => $_POST["id_task"],
         "description" => $_POST["description"],
     ];
 
@@ -21,9 +21,11 @@ try {
     $sentence->execute();
 
 ?>
+
     <script>
-        window.loction.href = "../board.php";
+        window.location.href = "../board.php";
     </script>
+
 <?php
 
 } catch (PDOException $error) {

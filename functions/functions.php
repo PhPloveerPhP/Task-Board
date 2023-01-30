@@ -24,7 +24,7 @@ function create_card(string $description, string $id, string $status): string
                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png" width="32"
                         height="32" class="rounded-circle" alt="Avatar" />
                 </div>
-                <button type="submit" name="edit" value="$id" form="edit" class="btn btn-outline-primary btn-sm">Edit</button>
+                <button type="submit" name="edit" value="$id,$description" form="edit" class="btn btn-outline-primary btn-sm">Edit</button>
                 <button type="submit" name="delete" value="$id" form="delete" class="btn btn-outline-danger btn-sm">Delete</button>
             </div>
     </div>

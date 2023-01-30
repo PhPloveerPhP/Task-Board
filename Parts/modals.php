@@ -49,10 +49,10 @@
 
           <div class="form-group" required>
             <label for="TaskDescription">New Task Decription</label>
-            <textarea class="form-control" name="task_description" rows="3"></textarea>
+            <textarea class="form-control" name="task_description" rows="3" placeholder="<?php echo $arr["description"] ?>"></textarea>
           </div>
 
-        </div>
+        </div>  
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary" name="submit">Save changes</button>

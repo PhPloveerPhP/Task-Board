@@ -9,7 +9,7 @@ function create_card(string $description, string $id, string $status): string
     $card_template = <<<delimiter
     <div class="card mb-3 bg-light">
         <form action="$server" method="post" id="delete"></form>
-        <form action="$editor" method="post" id="edit"></form>
+        <form action="$editor" method="get" id="edit"></form>
             <div class="card-body p-3">
                 <div class="float-right mr-n2">
                     <label class="custom-control custom-checkbox">

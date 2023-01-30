@@ -1,9 +1,8 @@
-<?php 
+<?php if (isset($_GET['edit']))
+    include '../controllers/show_edit_task.php'; ?>
 
-echo $_POST["edit"];
-
-
-?>
+<?php if(isset($_POST["update"]))
+    include "../controllers/update_edit.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,62 +19,16 @@ echo $_POST["edit"];
 <body>
     <div class="father_editor">
         <div class="form_cont">            
-            <form>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <form action="<?php $_SERVER["PHP_SELF"] ?>" method="post">
+                <div class="mb-3 d-flex flex-column">
+                    <label for="exampleInputEmail1" class="form-label">Task Content</label>
+                    <textarea type="text" class="form-control" placeholder="<?php echo $arr["description"] ?>" name="description" required></textarea>
+                    <textarea name="id" value="<?php $_GET["edit"]?>" hidden></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="../board.php" class="btn btn-card btn-dark" style="color: white;">Back</a>
+                <button type="submit" class="btn btn-card btn-primary" name="update">Update</button>
             </form>
         </div>
     </div>    
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

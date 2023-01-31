@@ -1,3 +1,11 @@
+<?php session_start() ?>
+
+<?php if(isset($_POST["logout"])):  ?>
+    <?php session_destroy(); ?>
+    <script>
+        window.location.href = "../../index.php";
+    </script>
+<?php endif ?>
 
 <?php if (isset($_POST["delete_usr"]))
     include "./admin_functions/delete_usr.php";
@@ -17,6 +25,12 @@
 <?php if(isset($_POST["delete_task"]))
     include "./admin_functions/delete_task.php" ?>
 
+<?php if(!isset($_SESSION["admin"])): ?>
+        <script>
+            window.location.href = "../../index.php";
+        </script>
+<?php endif ?>
+
 
 <?php include './admin_functions/show_users.php'?>
 <?php include './admin_functions/show_tasks.php'?>
@@ -33,12 +47,12 @@
     <meta name="author" content="">
     <title>Dashboard</title>
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../../fonts/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -200,7 +214,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Me (Admin)</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="../../images/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -340,7 +354,10 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="#">Logout</a>
+                    <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
+                        <button type="submit" name="logout" class="btn btn-primary">Logout</butotn>
+                    </form>
+                    
                 </div>
             </div>
         </div>
@@ -350,11 +367,11 @@
     <?php include "./admin_modals.php"; ?>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/jquery/jquery.min.js"></script>
+    <script src="../../css/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="../../js/sb-admin-2.min.js"></script>
             
 </body>
 </html>

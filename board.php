@@ -20,7 +20,7 @@
     </script>
 <?php endif ?>
 
-<!-- User Delte Session -->
+<!-- User No Session -->
 <?php if(!isset($_SESSION["id"])): ?>
     <script>
         window.location.href = "./index.php";
@@ -50,6 +50,7 @@
             <div class="container-fluid" style="display: flex; justify-content: space-between;">
                 <h1 class="h3 mb-3">My Board</h1>
                 <div class="dropdown">
+
                     <div class="user-logged" type="button" id="dropUser" data-toggle="dropdown">
                         <img src= <?php echo "https://bootdey.com/img/Content/avatar/avatar" . $_SESSION["id"] .".png" ?> width="40" height="40"
                             class="rounded-circle" alt="Avatar"/>

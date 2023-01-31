@@ -1,3 +1,16 @@
+<?php if(isset($_SESSION["id"])): ?>
+   <?php if ($_SESSION != "admin"): ?>
+        <script>
+            window.location.href = "../../index.php";
+        </script>
+    <?php endif ?>
+<?php else: ?>
+        <script>
+            window.location.href = "../../index.php";
+        </script>
+<?php endif ?>
+
+
 <?php if(isset($_POST["edit_usr"]))
     $info = (explode("," ,$_POST["edit_usr"]));
 ?>

@@ -4,7 +4,7 @@
 
 ## Introducción
 
-<div><img src="C:\Users\thund\OneDrive\Desktop\Logo.PNG" style="zoom:33%;" /></div>
+<div><img src="https://i.imgur.com/5hQPees.png" style="zoom:33%;" /></div>
 
 Task Board un proyecto que tiene como objetivo proporcionar una solución a la organización y finalización de tareas individuales o grupales.
 
@@ -51,15 +51,15 @@ Los siguientes programas y herramientas son necesarias para ejecutar Proyecto:
 Para usar la aplicación, siga estos pasos:
 1.  Nos registramos
 
-   ![](C:\Users\thund\OneDrive\Desktop\register.PNG)
+   ![](https://i.imgur.com/2KIte9c.png)
 
 2. Iniciamos sesión
 
-   ![](C:\Users\thund\OneDrive\Desktop\login.PNG)
+   ![](https://i.imgur.com/ULjpLbp.png)
 
 3. Creamos tareas
 
-   ![](C:\Users\thund\OneDrive\Desktop\board.PNG)
+   ![](https://i.imgur.com/QN3kf9t.png)
 
 ## Licencia
 Bajo Licencia Mit

@@ -236,7 +236,7 @@
                     <div class="container mt-3">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="alert alert-<?= $result['error'] ? 'danger' : 'success' ?>" role="alert">
+                                <div class="alert alert-<?= $result['error'] ? 'danger' : 'success' ?>" role="alert" style="display: flex; justify-content: center;">
                                     <?= $result['message'] ?>
                                 </div>
                             </div>
@@ -248,7 +248,7 @@
                     <div class="row">
 
                         <!-- Content Column -->
-                        <div class="col-lg-6 mb-4">
+                        <div>
 
                             <!-- Project Card Example -->
                             <div class="card shadow mb-4">
@@ -268,15 +268,19 @@
                                     </thead>
                                     <tbody>
                                         <?php foreach($users as $user){
-                                            echo "<form method='post' action" . $_SERVER["PHP_SELF"] ."><tr>
+                                            echo "
+                                            <form method='post' action" . $_SERVER["PHP_SELF"] ." id='delete_usr'></form>
+                                            <form method='post' action='./edit_user.php' id='edit_usr'></form>
+                                            <tr>
                                             <td>". $user["id_user"]."</td>
                                             <td>". $user["name"]."</td>
                                             <td>". $user["email"]."</td>
                                             <td>". $user["passw"]."</td>
                                             <td>". $user["create_at"]."</td>
                                             <td>". $user["update_at"]."</td>
-                                            <td><button type='submit' class='btn btn-outline-info'>Edit</button></td>
-                                            <td><button class='btn btn-outline-danger' name='delete_usr' value=".$user["id_user"].">Delete</button></td></tr></form>";
+                                            <td><button type='submit' class='btn btn-outline-info' name='edit_usr' value=". $user["id_user"] . "," . $user["name"] . "," . $user["email"] . "," . $user["passw"] . "  form='edit_usr'>Edit</button></td>
+                                            <td><button type='submit' class='btn btn-outline-danger' name='delete_usr' value=".$user["id_user"]." form='delete_usr'>Delete</button></td>
+                                            </tr>";
                                         } ?>
                                     </tbody>
                                 </table>
@@ -331,7 +335,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
+                        <span aria-hidden="true"></span>
                     </button>
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>

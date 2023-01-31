@@ -530,8 +530,10 @@ pre code {
   }
 }
 .row {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  /* flex-wrap: wrap; */
   margin-right: -0.75rem;
   margin-left: -0.75rem;
 }

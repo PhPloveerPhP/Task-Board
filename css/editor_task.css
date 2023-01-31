@@ -3,7 +3,6 @@ body {
     background-color: #f8fafb;
 }
 
-
 .father_editor{
     display: flex;
     justify-content: center;
@@ -12,7 +11,20 @@ body {
     position: absolute;
 }
 
+.father_editor_admin{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    top: 15%;
+    position: absolute;
+}
+
 .form_cont{
+    width: 20%;
+    text-align: center;
+}
+
+.form_cont_admin{
     width: 20%;
     text-align: center;
 }

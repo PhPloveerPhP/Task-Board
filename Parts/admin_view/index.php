@@ -307,7 +307,6 @@
                                             <td>". $task["id_user"]."</td>
                                             <td>". $task["description"]."</td>
                                             <td>". $task["status"]."</td>
-                                            <td><button class='btn btn-outline-info'>Edit</button></td>
                                             <td><button type='' class='btn btn-outline-danger' name='delete_task' value=" . $task["id_task"] . ">Delete</button></td></tr></form>";
                                         } ?>
                                     </tbody>

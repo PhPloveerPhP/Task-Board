@@ -4,10 +4,6 @@
             window.location.href = "../../index.php";
         </script>
     <?php endif ?>
-<?php else: ?>
-        <script>
-            window.location.href = "../../index.php";
-        </script>
 <?php endif ?>
 
 

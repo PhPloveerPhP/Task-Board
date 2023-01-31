@@ -25,7 +25,7 @@ if (isset($_GET['edit'])){
 </head>
 <body>
     <div class="father_editor">
-        <div class="form_cont">            
+        <div class="jumbotron" style="background: transparent; text-align:center;">            
             <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="post">
                 <div class="mb-3 d-flex flex-column">
                     <label for="Task Info" class="form-label">Task Content</label>

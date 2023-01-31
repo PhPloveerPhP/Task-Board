@@ -4,11 +4,9 @@ body {
 }
 
 .father_editor{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    top: 30%;
-    position: absolute;
+    position: fixed; /* or absolute */
+    top: 50%;
+    left: 50%;
 }
 
 .father_editor_admin{

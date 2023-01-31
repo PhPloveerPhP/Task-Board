@@ -1,11 +1,9 @@
 <?php 
+session_start();
 
 if (isset($_GET['edit'])){
     $info =  explode(',', $_GET['edit']);
-}
-?>
-
-
+}?>
 
 <?php if(isset($_POST["update"]))
     include "../controllers/update_task.php" ?>

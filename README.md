@@ -14,7 +14,7 @@ Los siguientes programas y herramientas son necesarias para ejecutar Proyecto:
 - PHP 7.4.10 o superior
 - MariaDB 10.4.14
 - Apache 2.4.46
-- Bootstrap 4.3
+- Bootstrap 4.3.x
 - Composer 2.5.1
 
 ## Instalación

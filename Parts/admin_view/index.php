@@ -10,7 +10,7 @@
 <?php if (isset($_POST["delete_usr"]))
     include "./admin_functions/delete_usr.php";
 ?>
-<?php if (isset($_POST[""])): ?>
+<?php if (isset($_POST["edit_usr"])): ?>
     <script>
         window.location.href = "../edit_user.php";
     </script>

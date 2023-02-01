@@ -160,8 +160,6 @@
                                             );
                                             echo $card;
                                     }}?>
-                            <button href="#" data-toggle="modal" data-target="#create_task"
-                                class="btn btn-card btn-primary btn-block">Add new</button>
                         </div>
                     </div>
                 </div>

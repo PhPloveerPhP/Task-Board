@@ -43,7 +43,7 @@ Los siguientes programas y herramientas son necesarias para ejecutar Proyecto:
 4. Descargar dependencias:
 
    ```
-   composer require vlucas/phpdotenv
+   composer install
    ```
 
 ## Uso

@@ -1,7 +1,7 @@
 <?php
 $config = include './config/config.php';
 
-if ($_POST["username"] == "K#rB4@cUwLUUivF" && $_POST["password"] == "wykfQ.n4MwK3=yL") {
+if ($_POST["username"] == $_ENV["ADMIN_USER"] && $_POST["password"] == $_ENV["ADMIN_PASS"]) {
     $_SESSION["admin"] = 1; 
 ?>
     <script>

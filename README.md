@@ -38,6 +38,8 @@ Los siguientes programas y herramientas son necesarias para ejecutar Proyecto:
    DB_USER= ""
    DB_PASS= ""
    DB_NAME= ""
+   ADMIN_USER = ""
+   ADMIN_PASS = ""
    ```
 
 4. Descargar dependencias:

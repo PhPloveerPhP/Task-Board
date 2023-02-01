@@ -1,13 +1,13 @@
 <?php
 $result = [
     'error' => false,
-    'message' => 'Tarea creada con exito',
+    'message' => 'Task created successfully',
 ];
 
 if (trim($_POST["task_description"]) == "" || $_POST["task_status"] == "Choose...") {
     $result = [
         'error' => true,
-        'message' => 'Error al crear la tarea',
+        'message' => 'Error creating task',
     ];
 
 } else {
@@ -15,18 +15,12 @@ if (trim($_POST["task_description"]) == "" || $_POST["task_status"] == "Choose..
 
     try {
         $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
-        $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
+        $conection = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
 
-        $task = [
-            "id_user" => $_SESSION["id"],
-            "description" => $_POST["task_description"],
-            "status" => $_POST["task_status"],
-        ];
-
-        $sentence = $conexion->prepare("INSERT INTO tasks (id_user, description, status) values (?,?,?)");
-        $sentence->bindParam(1, $task["id_user"]);
-        $sentence->bindParam(2, $task["description"]);
-        $sentence->bindParam(3, $task["status"]);
+        $sentence = $conection->prepare("INSERT INTO tasks (id_user, description, status) values (?,?,?)");
+        $sentence->bindParam(1, $_SESSION["id"]);
+        $sentence->bindParam(2, $_POST["task_description"]);
+        $sentence->bindParam(3, $_POST["task_status"]);
 
         $sentence->execute();
 

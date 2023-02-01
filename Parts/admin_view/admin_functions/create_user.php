@@ -2,14 +2,14 @@
 
 $result = [
     'error' => false,
-    'message' => 'Usuario Creado',
+    'message' => 'User created successfully',
 ];
 
 $config = include '../../config/config.php';
 
 if (trim($_POST["usr_name"], " ") == "" || trim($_POST["usr_email"], " ") == "" || trim($_POST["usr_passw"], " ") == " "){
     $result["error"] = true;
-    $result["message"] = "Error: Campos Incompletos";
+    $result["message"] = "Error: form incomplete";
 
 } else {
 

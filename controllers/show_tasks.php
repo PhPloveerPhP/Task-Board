@@ -16,4 +16,3 @@ try {
 } catch (PDOException $error) {
     $error = $error->getMessage();
 }
-?>

@@ -10,9 +10,9 @@ $result = [
 try {
 
     $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
-    $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
+    $conection = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
 
-    $sentence = $conexion->prepare("SELECT * FROM users");
+    $sentence = $conection->prepare("SELECT * FROM users");
     $sentence->execute();
     $arr_users = $sentence->fetchAll(PDO::FETCH_ASSOC);
     $handler = false;
@@ -31,7 +31,7 @@ try {
     }
 
     if (!$handler) {
-        $sentence = $conexion->prepare("INSERT INTO users (name, email, passw) values (?,?,?)");
+        $sentence = $conection->prepare("INSERT INTO users (name, email, passw) values (?,?,?)");
         $sentence->bindParam(1, $user["name"]);
         $sentence->bindParam(2, $user["email"]);
         $sentence->bindParam(3, $user["passw"]);

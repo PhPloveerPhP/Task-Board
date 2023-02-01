@@ -3,7 +3,7 @@
 
 $result = [
     'error' => false,
-    'message' => 'Usuario eliminado',
+    'message' => 'User deleted successfully',
 ];
 
 $config = include '../../config/config.php';

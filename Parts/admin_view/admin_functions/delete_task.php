@@ -2,7 +2,7 @@
 
 $result = [
     'error' => false,
-    'message' => 'Task Deleted',
+    'message' => 'Task deleted sucessfully',
 ];
 
 $config = include '../../config/config.php';

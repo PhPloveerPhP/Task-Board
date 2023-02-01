@@ -2,14 +2,14 @@
 
 $result = [
     'error' => false,
-    'message' => 'Usuario Creado',
+    'message' => 'Task created successfully',
 ];
 
 $config = include '../../config/config.php';
 
 if (trim($_POST["id_user"], " ") == "" || trim($_POST["description"], " ") == "" || trim($_POST["task_status"], " ") == " "){
     $result["error"] = true;
-    $result["message"] = "Error: Campos Incompletos";
+    $result["message"] = "Error: form incomplete";
 } else {
     try {
         $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];

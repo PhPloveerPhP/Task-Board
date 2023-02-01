@@ -2,7 +2,6 @@
 
 $arr = explode(",", $_POST["check"]);
 
-
 $config = include './config/config.php';
 
 if ($arr[0] == "C") {

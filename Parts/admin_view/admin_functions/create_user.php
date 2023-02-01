@@ -28,10 +28,6 @@ if (trim($_POST["usr_name"], " ") == "" || trim($_POST["usr_email"], " ") == "" 
                 } 
             }
 
-            var_dump($_POST["usr_name"]);
-            var_dump($_POST["usr_email"]);
-            var_dump($_POST["usr_name"]);
-            echo "hola";
             if (!$handler) {
                 $sentence = $conexion->prepare("INSERT INTO users (name, email, passw) VALUES (:name, :email, :passw)");
                 $sentence->bindParam(':name', $_POST["usr_name"]);

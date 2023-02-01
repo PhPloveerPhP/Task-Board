@@ -26,7 +26,7 @@ if (isset($_GET['edit'])){
             <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="post">
                 <div class="mb-3 d-flex flex-column">
                     <h2 for="Task Info" class="form-h1">Task Editor</h2>
-                    <textarea style="background-color: #f8fafb; border: 1px solid; padding: 10px" type="text" class="form-control" rows="3" cols="30" placeholder="<?php echo $info[1] ?>" name="description" required></textarea>
+                    <textarea style="background-color: #f8fafb; border: 1px solid;max-width:100%;min-height:80px;max-height:80px;" type="text" class="form-control" rows="3" cols="30" placeholder="<?php echo $info[1] ?>" name="description" required></textarea>
                     <input type="text" hidden name="id_task" value="<?php echo $info[0]?>">
                 </div>
                 <a href="../board.php" class="btn btn-card btn-dark" style="color: white;">Back</a>

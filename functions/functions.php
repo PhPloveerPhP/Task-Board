@@ -2,6 +2,8 @@
 
 declare (strict_types = 1);
 
+// Funtcion to create a card with the task
+
 function create_card(string $description, string $id, string $status): string
 {
     $server = $_SERVER["PHP_SELF"];
@@ -32,6 +34,7 @@ function create_card(string $description, string $id, string $status): string
     return $card_template;
 }
 
+// htmlspecialchar function to avoid XSS attacks
 function codificarHTML(string $string): string {
     return htmlspecialchars($string, ENT_NOQUOTES | ENT_SUBSTITUTE, "UTF-8");
 };

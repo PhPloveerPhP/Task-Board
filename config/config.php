@@ -1,11 +1,12 @@
 <?php
 
+    // Load environment variables from .env file
     if (!isset($_ENV['CLEARDB_DATABASE_URL'])) {
         require __DIR__ . '/../vendor/autoload.php';
         $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
         $dotenv->load();
     }
-
+    // Database connection
     return [
         'db' => [
             'host' => $_ENV['DB_HOST'],
